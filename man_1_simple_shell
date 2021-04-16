@@ -1,7 +1,7 @@
 
 ." manpage for our simple shell
 
-.TH HSH 1 "13 abril 2020" "Version 1.0" "General Command"
+.TH HSH 1 "13 abril 2021" "Version 1.0" "General Command"
 
 .SH NAME
 .BI hsh
