@@ -8,7 +8,7 @@
  *@argv: puntero
  *Return: los loops
 */
-int main(int argc, char **argv)
+int main(void)
 {
 lsh_loop();
 return (EXIT_SUCCESS);
@@ -33,8 +33,8 @@ status = lsh_execute(args);
 free(line);
 free(args);
 }
+while (status);
 }
-while (status)
 /**
  *lsh_read_line - Function lee las lineas
  *Load config files, if any.
@@ -87,16 +87,35 @@ exit(EXIT_FAILURE);
   *@args: puntero
  *Return: los loops
 */
+/*
+ * List of builtin commands, followed by their corresponding functions.
+ */
+char *builtin_str[] = {
+	"cd",
+
+	"help",
+
+	"exit"
+};
+int (*builtin_func[]) (char **) = {
+
+	&lsh_cd,
+
+	&lsh_help,
+
+	&lsh_exit
+};
 int lsh_execute(char **args)
 {
 int i;
+(*builtin_func) (char **);
 if (args[0] == NULL)
 {
 return (1);
 }
 for (i = 0; i < lsh_num_builtins(); i++)
 {
-if (strcmp(args[0], builtin_str[i]) == 0)
+if (strcmp(args[0], *builtin_str[i]) == 0)
 {
 return ((*builtin_func[i])(args));
 }
