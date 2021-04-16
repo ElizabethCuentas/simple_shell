@@ -1,4 +1,4 @@
-#ifndef HEADER 
+#ifndef HEADER
 #define HEADER
 #include <sys/wait.h>
 #include <unistd.h>
@@ -12,7 +12,7 @@ int lsh_execute(char **args);
 int lsh_exit(char **args);
 int lsh_help(char **args);
 int lsh_cd(char **args);
-int lsh_num_builtins();
+int lsh_num_builtins(void);
 int (*builtin_func[]) (char **);
 int lsh_launch(char **args);
 char **lsh_split_line(char *line);
