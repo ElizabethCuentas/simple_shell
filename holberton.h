@@ -11,6 +11,7 @@
 
 /* prompt.c */
 void INThandler(int sig);
+int shelcita(char *buffer, char **commands, size_t length, size_t characters)
 
 /* strtok_example.c */
 unsigned int find_command_length(char *s);
