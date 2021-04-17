@@ -23,4 +23,3 @@ void free_all_double_ptr(char **d_ptr)
 
 	free(d_ptr);
 }
-
